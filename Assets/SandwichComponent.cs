@@ -31,6 +31,7 @@ public class SandwichComponent : MonoBehaviour
             rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             boxCollider.enabled = false;
             isSolved = true;
+            print("solved!");
         }
     }
 }
