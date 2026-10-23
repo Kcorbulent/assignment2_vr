@@ -13,4 +13,21 @@ public class SandwichController : MonoBehaviour
     {
         
     }
+    public int ingredient = 0;
+    public Transform sandwich;
+    public void nextIngredient()
+    {
+        ingredient = ingredient + 1;
+        if (ingredient <= 7)
+        {
+            transform.GetChild(ingredient).gameObject.transform.SetPositionAndRotation(new Vector3(transform.GetChild(ingredient).gameObject.transform.position.x + 1000, transform.GetChild(ingredient).gameObject.transform.position.y, transform.GetChild(ingredient).gameObject.transform.position.z), transform.GetChild(ingredient).gameObject.transform.rotation);
+            transform.GetChild(ingredient).gameObject.SetActive(true);
+        }
+        if (ingredient >= 7)
+        {
+            sandwich.GetChild(0).gameObject.SetActive(true);
+            sandwich.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            sandwich.GetComponent<BoxCollider>().isTrigger = false;
+        }
+    }
 }

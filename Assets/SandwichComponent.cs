@@ -11,6 +11,7 @@ public class SandwichComponent : MonoBehaviour
     public bool isSolved;
     private Rigidbody rigidbody;
     private BoxCollider boxCollider;
+    public SandwichController controller;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,7 +32,7 @@ public class SandwichComponent : MonoBehaviour
             rigidbody.constraints = RigidbodyConstraints.FreezeAll;
             boxCollider.enabled = false;
             isSolved = true;
-            print("solved!");
+            controller.nextIngredient();
         }
     }
 }
