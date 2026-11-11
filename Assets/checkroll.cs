@@ -1,7 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class checkroll : MonoBehaviour
 {
+    Rigidbody body;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
